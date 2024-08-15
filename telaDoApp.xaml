@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApplogin.telaDoApp"
+             Title="telaDoApp"
+             BackgroundColor="#f2f2f2">
+    <AbsoluteLayout>
+        <ScrollView Padding="20 ,20, 20, 87"
+                    AbsoluteLayout.LayoutFlags="All"
+                    AbsoluteLayout.LayoutBounds="0, 0, 1, 1">
+            <StackLayout>
+                <!--menu do usuario-->
+                <Grid ColumnDefinitions="*,*,*,*">
+                    <Label Text="Banco" TextColor="black" FontAttributes="Bold" FontSize="Medium" Grid.Column="0" VerticalOptions="Center"/>
+
+                    <StackLayout VerticalOptions="Center" HorizontalOptions="End" Grid.Column="2">
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                        </StackLayout.GestureRecognizers>
+
+                        <Image x:Name="Eyeicon" Source="olho_fechado.png"
+                           WidthRequest="30"
+                           HeightRequest="30"
+                           IsVisible="True"
+                           Aspect="AspectFit"/>
+                    </StackLayout>
+
+                    <ImageButton Source="userfoto.png"
+                             Clicked="ImageButton_Clicked"
+                             Grid.Column="3"
+                             
+                             Aspect="AspectFit"
+                             IsVisible="true"
+                             WidthRequest="30"
+                             HeightRequest="30"
+                             CornerRadius="30"
+                             Padding="-6"
+                             HorizontalOptions="End"/>
+                </Grid>
+
+                <!--menu de países-->
+                <HorizontalStackLayout Spacing="10"
+                                       Margin="0, 5, 0, 0">
+                    <Frame x:Name="frame_brasil"
+                           Padding="5"
+                           BackgroundColor="#fff"
+                           BorderColor="Transparent"
+                           CornerRadius="18">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="brasil_taped"/>
+                        </Frame.GestureRecognizers>
+                        <HorizontalStackLayout Spacing="3">
+                            <Image Source="brasil.png"
+                                   WidthRequest="20"/>
+                            
+                            <Label Text="BRL"
+                                   TextColor="gray"/>
+                        </HorizontalStackLayout>
+                    </Frame>
+
+                    <Frame x:Name="frame_eua"
+                           Padding="5"
+                           BackgroundColor="Transparent"
+                           BorderColor="Transparent"
+                           CornerRadius="18">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="eua_taped"/>
+                        </Frame.GestureRecognizers>
+
+                        <HorizontalStackLayout Spacing="3">
+                            <Image Source="eua.png"
+                                   WidthRequest="20"/>
+
+                            <Label Text="USD"
+                                   TextColor="gray"/>
+                        </HorizontalStackLayout>
+                    </Frame>
+                </HorizontalStackLayout>
+                
+                <!--infos da conta-->
+                <Frame CornerRadius="15"
+                   Padding="10"
+                   BackgroundColor="#fff"
+                   BorderColor="Transparent"
+                   Margin="0, 20">
+
+                    <VerticalStackLayout Spacing="10">
+                        <Label Text="Conta Digital"
+                           TextColor="Gray"
+                           FontSize="12"/>
+
+                        <Grid ColumnDefinitions="auto,*,*" RowDefinitions="*,*" Padding="0">
+                            <HorizontalStackLayout HorizontalOptions="Start"
+                                               VerticalOptions="Center"
+                                               Margin="0, 7, 0 ,13"
+                                               Grid.Row="0" Grid.Column="0">
+
+                                <Label Text="R$"
+                                   x:Name="money_type"
+                                   TextColor="Black"
+                                   FontSize="24"
+                                   FontAttributes="Bold"
+                                   VerticalOptions="Center"
+                                   HorizontalTextAlignment="Start"/>
+
+                                <Label x:Name="txt_salddo"
+                                   Text="••••"
+                                   FontAttributes="Bold"
+                                   TextColor="Black"
+                                   FontSize="25"
+                                   HorizontalTextAlignment="Start"
+                                   VerticalTextAlignment="Center"
+                                   Margin="3, 0, 0, 0"/>
+                            </HorizontalStackLayout>
+                            <Image Source="arrow.png"
+                               WidthRequest="30"
+                               HeightRequest="30"
+                               Aspect="AspectFit"
+                               Grid.Row="0" Grid.Column="2"
+                               HorizontalOptions="End"/>
+                        </Grid>
+
+                        <HorizontalStackLayout Spacing="10">
+                            <Frame CornerRadius="10" 
+                               BackgroundColor="#f2f2f2" 
+                               BorderColor="Transparent" 
+                               Grid.Row="1" Grid.Column="0" 
+                               VerticalOptions="Center" 
+                               HorizontalOptions="Start"
+                               Padding="5, 5, 5, 5">
+
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1"/>
+                                </Frame.GestureRecognizers>
+
+                                <HorizontalStackLayout VerticalOptions="Center" HorizontalOptions="Center" Spacing="5" Padding="0">
+                                    <Image Source="pix.png"
+                        WidthRequest="20"
+                        HeightRequest="20"
+                        VerticalOptions="Center"
+                        HorizontalOptions="Center"/>
+
+                                    <Label Text="Pix"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center"
+                       TextColor="Gray"/>
+                                </HorizontalStackLayout>
+                            </Frame>
+
+                            <Frame CornerRadius="10" 
+                BackgroundColor="#f2f2f2" 
+                BorderColor="Transparent" 
+                Grid.Row="1" Grid.Column="1" 
+                VerticalOptions="Center" 
+                HorizontalOptions="Start"
+                Padding="5, 5, 5, 5">
+
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_2"/>
+                                </Frame.GestureRecognizers>
+
+                                <HorizontalStackLayout VerticalOptions="Center" HorizontalOptions="Center" Spacing="5" Padding="0">
+                                    <Image Source="credit.png"
+                       WidthRequest="20"
+                       HeightRequest="20"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center"/>
+
+                                    <Label Text="Cartão"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center"
+                       TextColor="Gray"/>
+                                </HorizontalStackLayout>
+                            </Frame>
+                        </HorizontalStackLayout>
+                    </VerticalStackLayout>
+                </Frame>
+
+                <!--shopping menu -->
+                <Grid RowDefinitions="*" ColumnDefinitions="*,*,*,*" ColumnSpacing="30">
+                    <VerticalStackLayout Grid.Row="0" Grid.Column="0" Spacing="5">
+                        <Frame BackgroundColor="#fff"
+               CornerRadius="10"
+               BorderColor="Transparent">
+                            <Image Source="shopping.png"
+                       Aspect="AspectFit"
+                       WidthRequest="20"/>
+                        </Frame>
+
+                        <Label Text="Shopping"
+               TextColor="Black"
+               FontAttributes="Bold"
+               HorizontalTextAlignment="Center"
+               FontSize="12"/>
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout Grid.Row="0" Grid.Column="1" Spacing="5">
+                        <Frame BackgroundColor="#fff"
+               CornerRadius="10"
+               BorderColor="Transparent">
+                            <Image Source="celular.png"
+                       Aspect="AspectFit"
+                       WidthRequest="20"/>
+                        </Frame>
+
+                        <Label Text="Recarga"
+               TextColor="Black"
+               FontAttributes="Bold"
+               HorizontalTextAlignment="Center"
+               FontSize="12"/>
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout Grid.Row="0" Grid.Column="2" Spacing="5">
+                        <Frame BackgroundColor="#fff"
+               CornerRadius="10"
+               BorderColor="Transparent">
+                            <Image Source="gift.png"
+                       Aspect="AspectFit"
+                       WidthRequest="20"/>
+                        </Frame>
+
+                        <Label Text="Gift Card"
+               TextColor="Black"
+               FontAttributes="Bold"
+               HorizontalTextAlignment="Center"
+               FontSize="12"/>
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout Grid.Row="0" Grid.Column="3" Spacing="5">
+                        <Frame BackgroundColor="#fff"
+               CornerRadius="10"
+               BorderColor="Transparent">
+                            <Image Source="more.png"
+                       Aspect="AspectFit"
+                       WidthRequest="20"/>
+                        </Frame>
+
+                        <Label Text="Mais"
+               TextColor="Black"
+               FontAttributes="Bold"
+               HorizontalTextAlignment="Center"
+               FontSize="12"/>
+                    </VerticalStackLayout>
+
+                </Grid>
+
+                <!--Espaço de propaganda-->
+                <Frame BackgroundColor="#fff"
+                   Margin="0, 25"
+                   BorderColor="Transparent"
+                   HeightRequest="150">
+                    <Label Text="Aqui vai uma propaganda"
+                       TextColor="Black"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Center"/>
+                </Frame>
+
+                <!--container de pontos e meu porquinho-->
+                <Grid ColumnDefinitions="*,*" RowDefinitions="*" ColumnSpacing="20">
+                    <Frame CornerRadius="10"
+                       BackgroundColor="#fff"
+                       BorderColor="Transparent"
+                       Grid.Row="0" Grid.Column="0">
+                        <VerticalStackLayout>
+                            <Label Text="Pontos do app"
+                               TextColor="Black"/>
+
+                            <Label Text="•••"
+                               x:Name="txt_pontos"
+                               FontSize="20"
+                               TextColor="Black"
+                               Margin="0, 5, 0, 0"/>
+
+                            <Image Source="coin.png"
+                               WidthRequest="60"
+                               HorizontalOptions="End"
+                               VerticalOptions="End"/>
+                        </VerticalStackLayout>
+                    </Frame>
+
+                    <Frame CornerRadius="10"
+                       BackgroundColor="#fff"
+                       BorderColor="Transparent"
+                       Grid.Row="0" Grid.Column="1">
+                        <VerticalStackLayout Spacing="10">
+                            <Label Text="Meu Porquinho"
+                               TextColor="Black"/>
+
+                            <Image Source="pig_banck.png"
+                               WidthRequest="50"
+                               HorizontalOptions="Start"/>
+
+                            <Label Text="Comece a guardar dinheiro"
+                               FontSize="10"
+                               FontAttributes="Bold"
+                               TextColor="Black"
+                               Margin="0, 5, 0, 0"/>
+                        </VerticalStackLayout>
+                    </Frame>
+                </Grid>
+
+                <!--Espaço de propaganda-->
+                <Frame BackgroundColor="#fff"
+                   Margin="0, 25"
+                   BorderColor="Transparent"
+                   HeightRequest="130">
+                    <Label Text="Aqui vai uma propaganda"
+                       TextColor="Black"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Center"/>
+                </Frame>
+
+                <!--btn help-->
+                <Frame BackgroundColor="#fff"
+                   BorderColor="Transparent">
+                    <Frame.GestureRecognizers>
+                        <!--aqui vai um botão para aviso de ajuda-->
+                    </Frame.GestureRecognizers>
+                    <HorizontalStackLayout HorizontalOptions="Center"
+                                       Spacing="5">
+                        <Image Source="help_icon.png"
+                           WidthRequest="30"/>
+
+                        <Label Text="Precisa de ajuda?"
+                           TextColor="Black"
+                           FontSize="14"
+                           FontAttributes="Bold"
+                           VerticalOptions="Center"/>
+                    </HorizontalStackLayout>
+                </Frame>
+            </StackLayout>
+        </ScrollView>
+        
+        <!---menu de navegação-->
+        <Frame CornerRadius="20"
+               BackgroundColor="#E6f2f2f2"
+               BorderColor="Transparent"
+               Padding="5, 3"
+               AbsoluteLayout.LayoutFlags="PositionProportional"
+               AbsoluteLayout.LayoutBounds="0.5, 1, -1, AutoSize"
+               Margin="0 , 0, 0, 20">
+            <HorizontalStackLayout Spacing="10">
+                <Frame BackgroundColor="#fff"
+                       CornerRadius="20"
+                       Padding="10"
+                       BorderColor="Transparent">
+                    <Image Source="home.png"
+                           WidthRequest="28"/>
+                </Frame>
+
+                <Frame BackgroundColor="Transparent"
+                       CornerRadius="20"
+                       Padding="10"
+                       BorderColor="Transparent">   
+                    <Image Source="graphic_arrow.png"
+                           WidthRequest="28"/>
+                </Frame>
+
+                <Frame BackgroundColor="Transparent"
+                       CornerRadius="20"
+                       Padding="10"
+                       BorderColor="Transparent">
+                    <Image Source="shopping.png"
+                           WidthRequest="28"/>
+                </Frame>
+
+                <Frame BackgroundColor="Transparent"
+                       CornerRadius="20"
+                       Padding="10"
+                       BorderColor="Transparent">
+                    <Image Source="more.png"
+                           WidthRequest="28"/>
+                </Frame>
+            </HorizontalStackLayout>
+        </Frame>
+    </AbsoluteLayout>
+</ContentPage>

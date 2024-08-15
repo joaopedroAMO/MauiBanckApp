@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApplogin.pixPage"
+             Title="pixPage">
+    <VerticalStackLayout Background="#f2f2f2"
+                         Padding="20">
+        <Grid RowDefinitions="*" ColumnDefinitions="*,*,*">
+            <ImageButton Source="seta.png"
+                Clicked="ImageButton_Clicked_voltar"
+                WidthRequest="10"
+                HeightRequest="10"
+                IsVisible="true"
+                Aspect="AspectFit"
+                HorizontalOptions="Start"
+                         Padding="10"/>
+
+            <Label Text="Pix" FontSize="Medium" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"  TextColor="Black" Grid.Column="1"/>
+        </Grid>
+
+        <!--botão de pagar e receber-->
+        <Grid RowDefinitions="*, *" ColumnDefinitions="*" Padding="0, 20" RowSpacing="20">
+            <Frame BackgroundColor="#fff"
+                   Padding="10, 15"
+                   BorderColor="Transparent"
+                   Grid.Row="0" Grid.Column="0">
+                <Grid RowDefinitions="*" ColumnDefinitions="*, *, *, *">
+                    <Image Source="pagar.png"
+                           WidthRequest="30"
+                           Grid.Row="0" Grid.Column="0"/>
+
+                    <Label Text="Pagar"
+                           TextColor="black"
+                           FontSize="20"
+                           Grid.Row="0" Grid.Column="1"
+                           VerticalTextAlignment="Center"
+                           HorizontalTextAlignment="Start"/>
+
+                    <Image Source="arrow.png"
+                           WidthRequest="25"
+                           Grid.Row="0" Grid.Column="3"/>
+                </Grid>
+            </Frame>
+
+            <Frame BackgroundColor="#fff"
+                   Padding="10, 15"
+                   BorderColor="Transparent"
+                   Grid.Row="1" Grid.Column="0">
+                <Grid RowDefinitions="*" ColumnDefinitions="*, *, *, *">
+                    <Image Source="receber.png"
+                           WidthRequest="30"
+                           Grid.Row="0" Grid.Column="0"/>
+
+                    <Label Text="Receber"
+                           TextColor="black"
+                           FontSize="20"
+                           Grid.Row="0" Grid.Column="1"
+                           VerticalTextAlignment="Center"
+                           HorizontalTextAlignment="Start"/>
+
+                    <Image Source="arrow.png"
+                           WidthRequest="25"
+                           Grid.Row="0" Grid.Column="3"/>
+                </Grid>
+            </Frame>
+
+        </Grid>
+    </VerticalStackLayout>
+</ContentPage>

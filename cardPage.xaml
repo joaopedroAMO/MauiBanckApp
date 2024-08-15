@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApplogin.cardPage"
+             Title="cardPage">
+    <Grid BackgroundColor="#f2f2f2" Padding="20"
+          VerticalOptions="FillAndExpand"
+          ColumnDefinitions="*"
+          RowDefinitions="Auto, *, *, Auto"
+          RowSpacing="10">
+
+        <!-- Header Section -->
+        <Grid RowDefinitions="*" ColumnDefinitions="*, auto,*">
+            <ImageButton Source="seta.png"
+                         Clicked="ImageButton_Clicked"
+                         WidthRequest="40"
+                         HeightRequest="40"
+                         Aspect="AspectFit"
+                         Padding="10"
+                         Grid.Row="0" Grid.Column="0"
+                         HorizontalOptions="Start"/>
+
+            <Label Text="Termo de uso Cartão Banco"
+                   FontSize="Micro"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center"
+                   TextColor="Black"
+                   LineBreakMode="NoWrap"
+                   HorizontalOptions="FillAndExpand"
+                   Grid.Row="0" Grid.Column="1"/>
+
+            <ImageButton Source="info.png"
+                         WidthRequest="40"
+                         HeightRequest="40"
+                         Aspect="AspectFit"
+                         Padding="10"
+                         Grid.Row="0" Grid.Column="2"
+                         HorizontalOptions="End"/>
+        </Grid>
+        <!-- Image Section -->
+        <ContentView Grid.Row="1" HorizontalOptions="FillAndExpand">
+            <Image Source="banco.png"
+                   Aspect="AspectFit"
+                   HorizontalOptions="FillAndExpand"
+                   VerticalOptions="End"/>
+                <!-- Ajuste conforme necessário -->
+        </ContentView>
+
+        <!-- Text Section -->
+        <VerticalStackLayout Grid.Row="2" Spacing="10" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand">
+            <Label Text="Contrato de utilização do Cartão Banco Mastercad"
+                   TextColor="black"
+                   FontSize="Title"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Center"/>
+            <Label Text="Leia e aceite o contrato atualizado para aproveitar todas as vantagens do seu Cartão Banco da sua conta"
+                   FontSize="12"
+                   TextColor="Black"
+                   HorizontalTextAlignment="Center"/>
+        </VerticalStackLayout>
+
+        <!-- Button Section -->
+        <Button Grid.Row="3"
+                Text="Continuar"
+                VerticalOptions="End"
+                Grid.ColumnSpan="0"
+                TextColor="#fff"
+                FontAttributes="Bold"/>
+    </Grid>
+</ContentPage>

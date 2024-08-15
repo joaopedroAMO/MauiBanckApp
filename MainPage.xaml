@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApplogin.MainPage"
+             Title="Tela de login">
+
+    <VerticalStackLayout VerticalOptions="Center" Padding="20" Spacing="10">
+        <Label Text="Banco" HorizontalOptions="Center"
+               FontAttributes="Bold"
+               FontSize="Medium"/>
+
+        <Label Text="usuario:" Margin="0, 30, 0, 0"/>
+        <Entry x:Name="txt_usuario"/>
+
+        <Label Text="E-mail:" Margin="0, 30, 0, 0"/>
+        <Entry x:Name="txt_email"/>
+
+        <Label Text="Senha:" Margin="0, 20, 0, 0"/>
+        <Entry x:Name="txt_senha" IsPassword="True"/>
+
+        <Label Text="Senha do App" Margin="0, 30, 0, 0"/>
+        <Entry x:Name="txt_senhaapp"/>
+
+        <Button Text="Entrar" Margin="0, 20, 0, 0"
+                Clicked="Button_Clicked"/>
+    </VerticalStackLayout>
+
+</ContentPage>
